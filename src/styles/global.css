@@ -1,0 +1,186 @@
+:root {
+  font-family: "Courier New", Courier, monospace;
+  color: #d8d8d8;
+  background: #0b0b0d;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #0b0b0d;
+  color: #d8d8d8;
+}
+
+/* -------------------------
+   Header
+------------------------- */
+
+.header {
+  width: 100%;
+  padding: 14px 20px;
+}
+
+.header nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.header a {
+  color: #777;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.header a:hover,
+.header a.active {
+  color: #d8d8d8;
+}
+
+/* -------------------------
+   Hero
+------------------------- */
+
+.hero {
+  width: min(700px, calc(100% - 40px));
+  min-height: calc(100vh - 50px);
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding-bottom: 80px;
+}
+
+.hero h1 {
+  margin: 0;
+
+  color: #eeeeee;
+  font-size: clamp(38px, 6vw, 48px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -2px;
+}
+
+.role {
+  margin: 8px 0 24px;
+
+  color: #888;
+  font-size: 17px;
+}
+
+.description {
+  max-width: 680px;
+
+  margin: 0 0 20px;
+
+  color: #c4c4c4;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.intro {
+  margin: 0 0 42px;
+
+  color: #a0a0a0;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* -------------------------
+   Contact
+------------------------- */
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.contact a {
+  color: #999;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  color: #eeeeee;
+  text-decoration: underline;
+}
+
+/* -------------------------
+   Sections
+------------------------- */
+
+.placeholder-section {
+  width: min(700px, calc(100% - 40px));
+
+  margin: 0 auto;
+  padding: 100px 0;
+  border-top: 1px solid #202024;
+}
+
+.placeholder-section h2 {
+  margin: 0 0 20px;
+
+  color: #eeeeee;
+  font-size: 24px;
+}
+
+.placeholder-section p {
+  margin: 0;
+
+  color: #888;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* -------------------------
+   Mobile
+------------------------- */
+
+@media (max-width: 600px) {
+  .header {
+    padding: 16px 15px;
+  }
+
+  .header nav {
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .header a {
+    font-size: 12px;
+  }
+
+  .hero {
+    width: min(100% - 30px, 700px);
+    min-height: calc(100vh - 70px);
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .description,
+  .intro {
+    font-size: 14px;
+  }
+
+  .placeholder-section {
+    width: min(100% - 30px, 700px);
+  }
+}

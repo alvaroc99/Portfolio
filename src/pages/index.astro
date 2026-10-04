@@ -1,17 +1,92 @@
 ---
-
+import "../styles/global.css";
 ---
 
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Portfolio of Álvaro Cantero Cárdenas, junior backend developer focused on Java and Spring Boot."
+    />
+    <title>Álvaro Cantero Cárdenas— Backend Developer</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <nav>
+        <a href="/" class="active">Inicio</a>
+        <a href="#about">Sobre mi</a>
+        <a href="#projects">Experiencia</a>
+        <a href="#experience">Formación</a>
+        <a href="#projects">Proyectos</a>
+		<a href="#cv">CV</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>Álvaro Cantero Cárdenas</h1>
+
+        <p class="role">Backend Developer</p>
+
+        <p class="description">
+           Desarrollador backend junior.Especializado en Java y Spring Boot, con enfoque en APIs y desarrollo web.
+		   Interesado en crecer en QA automatizada o desarrollo de software mediante mejora continua.
+        </p>
+
+        <p class="intro">
+          Bienvenido a mi portafolio, donde podrás conocer más sobre mi experiencia, proyectos y habilidades. Si deseas contactarme,
+		  no dudes en enviarme un correo electrónico o conectarte conmigo a través de mis redes profesionales.
+        </p>
+
+        <div class="contact">
+          <a href="mailto:alvarocanterocardenas@gmail.com">[email]</a>
+          <a href="https://github.com/alvaroc99" target="_blank" rel="noopener noreferrer">
+            [github]
+          </a>
+          <a href="https://www.linkedin.com/in/alvarocanterocardenas" target="_blank" rel="noopener noreferrer">
+            [linkedin]
+          </a>
+        </div>
+      </section>
+
+      <section id="about" class="placeholder-section">
+        <h2>Sobre mi</h2>
+        <p>
+          sobre mi
+        </p>
+      </section>
+
+      <section id="projects" class="placeholder-section">
+        <h2>Experiencia</h2>
+        <p>
+          Experiencia
+        </p>
+      </section>
+
+      <section id="experience" class="placeholder-section">
+        <h2>Formación</h2>
+        <p>
+          Formacion academica y cursos
+        </p>
+      </section>
+
+      <section id="projects" class="placeholder-section">
+        <h2>Proyectos</h2>
+        <p>
+          proyectos
+        </p>
+      </section>
+
+      <section id="cv" class="placeholder-section">
+        <h2>CV</h2>
+        <p>
+          CV
+        </p>
+      </section>
+    </main>
+  </body>
 </html>
