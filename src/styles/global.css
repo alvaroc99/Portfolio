@@ -1,3 +1,5 @@
+
+@import "bootstrap/dist/css/bootstrap.min.css";
 :root {
   font-family: "Courier New", Courier, monospace;
   color: #d8d8d8;
@@ -17,23 +19,14 @@ html {
 body {
   margin: 0;
   min-width: 320px;
+  font-family: "Courier New", Courier, monospace;
   background: #0b0b0d;
   color: #d8d8d8;
 }
 
-/* -------------------------
-   Header
-------------------------- */
 
 .header {
   width: 100%;
-  padding: 14px 20px;
-}
-
-.header nav {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
 }
 
 .header a {
@@ -48,20 +41,16 @@ body {
   color: #d8d8d8;
 }
 
-/* -------------------------
-   Hero
-------------------------- */
+
+.portfolio-container {
+  width: min(740px, 100%);
+  max-width: 740px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
 
 .hero {
-  width: min(700px, calc(100% - 40px));
   min-height: calc(100vh - 50px);
-
-  margin: 0 auto;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
   padding-bottom: 80px;
 }
 
@@ -104,12 +93,6 @@ body {
    Contact
 ------------------------- */
 
-.contact {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
 .contact a {
   color: #999;
   font-size: 13px;
@@ -126,10 +109,7 @@ body {
 ------------------------- */
 
 .placeholder-section {
-  width: min(700px, calc(100% - 40px));
-
-  margin: 0 auto;
-  padding: 100px 0;
+  padding-block: 100px;
   border-top: 1px solid #202024;
 }
 
@@ -140,6 +120,14 @@ body {
   font-size: 24px;
 }
 
+.placeholder-section h3 {
+  margin: 0 0 16px;
+
+  color: #eeeeee;
+  font-size: 18px;
+  font-weight: 700;
+}
+
 .placeholder-section p {
   margin: 0;
 
@@ -148,18 +136,33 @@ body {
   line-height: 1.7;
 }
 
+.technology-icons {
+  margin-top: 16px;
+}
+
+.technology-icons i {
+  display: inline-flex;
+  width: 1.2em;
+  justify-content: center;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  line-height: 1;
+  color: #f4f4f4;
+}
+
+.technology-icons {
+    background-color: #4d474734;
+    border-radius: 15px;
+    padding: 20px 25px;
+}
+
 /* -------------------------
    Mobile
 ------------------------- */
 
 @media (max-width: 600px) {
-  .header {
-    padding: 16px 15px;
-  }
-
-  .header nav {
-    gap: 14px;
-    flex-wrap: wrap;
+  .portfolio-container {
+    padding-right: 15px;
+    padding-left: 15px;
   }
 
   .header a {
@@ -167,7 +170,6 @@ body {
   }
 
   .hero {
-    width: min(100% - 30px, 700px);
     min-height: calc(100vh - 70px);
   }
 
@@ -180,7 +182,5 @@ body {
     font-size: 14px;
   }
 
-  .placeholder-section {
-    width: min(100% - 30px, 700px);
-  }
+  
 }
