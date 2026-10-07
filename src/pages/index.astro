@@ -1,118 +1,18 @@
 ---
-import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
+import AboutMe from "../components/sections/aboutMe.astro";
+import Experience from "../components/sections/experience.astro";
+import Education from "../components/sections/education.astro";
+import Projects from "../components/sections/projects.astro";
+import Curriculum from "../components/sections/curriculum.astro";
+import Hero from "../components/sections/hero.astro"; 
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta
-      name="description"
-      content="Portfolio of Álvaro Cantero Cárdenas, junior backend developer focused on Java and Spring Boot."
-    />
-	<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-/>
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <title>Álvaro Cantero Cárdenas— Backend Developer</title>
-  </head>
-
-  <body>
-    <header class="header py-3 px-3">
-      <nav class="d-flex flex-wrap justify-content-center gap-3 gap-md-4" aria-label="Navegación principal">
-        <a href="/" class="nav-link p-0 active">Inicio</a>
-        <a href="#about" class="nav-link p-0">Sobre mi</a>
-        <a href="#projects" class="nav-link p-0">Experiencia</a>
-        <a href="#experience" class="nav-link p-0">Formación</a>
-        <a href="#projects" class="nav-link p-0">Proyectos</a>
-        <a href="#cv" class="nav-link p-0">CV</a>
-      </nav>
-    </header>
-
-    <main>
-      <section class="container portfolio-container hero d-flex flex-column justify-content-center">
-        <h1>Álvaro Cantero Cárdenas</h1>
-
-        <p class="role">Backend Developer</p>
-
-        <p class="description">
-           Desarrollador backend junior.Especializado en Java y Spring Boot, con enfoque en APIs y desarrollo web.
-		   Interesado en crecer en QA automatizada o desarrollo de software mediante mejora continua.
-        </p>
-
-        <p class="intro">
-          Bienvenido a mi portafolio, donde podrás conocer más sobre mi experiencia, proyectos y habilidades. Si deseas contactarme,
-		  no dudes en enviarme un correo electrónico o conectarte conmigo a través de mis redes profesionales.
-        </p>
-
-        <div class="contact d-flex flex-wrap gap-4">
-          <a href="mailto:alvarocanterocardenas@gmail.com">[email]</a>
-          <a href="https://github.com/alvaroc99" target="_blank" rel="noopener noreferrer">
-            [github]
-          </a>
-          <a href="https://www.linkedin.com/in/alvarocanterocardenas" target="_blank" rel="noopener noreferrer">
-            [linkedin]
-          </a>
-        </div>
-      </section>
-
-      <section id="about" class="container portfolio-container placeholder-section">
-        <h2>Sobre mi</h2>
-        <p>
-          sobre mi
-        </p>
-      </section>
-
-      <section id="projects" class="container portfolio-container placeholder-section">
-        <h2>Experiencia</h2>
-        <p>
-          Experiencia
-        </p>
-      </section>
-
-      <section id="experience" class="container portfolio-container placeholder-section">
-        <h2>Formación</h2>
-        <p>
-          Formacion academica y cursos
-        </p>
-      </section>
-
-      <section id="projects" class="container portfolio-container placeholder-section">
-        <h2>Proyectos</h2>
-        <p>
-          
-        </p>
-      </section>
-
-      <section id="cv" class="container portfolio-container placeholder-section">
-        <h2>CV</h2>
-        <div class="flex items-center gap-3">
-            <h3 class="mb-0">Descarga aquí:</h3>
-            <a href="/cv.pdf" 
-              download="CV_Alvaro_Cantero_Cardenas.pdf" 
-              class="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-md border border-gray-300 bg-white text-black hover:bg-gray-100 transition-colors shadow-sm">
-                Descargar CV
-            </a>
-        </div>
-        <br>
-      
-
-        <div class="technology-icons d-flex flex-wrap align-items-center gap-4" aria-label="Tecnologías utilizadas">
-          <i class="fa-brands fa-java" aria-hidden="true"></i>
-          <i class="devicon-spring-original" aria-hidden="true"></i>
-          <i class="devicon-flutter-plain"></i>
-          <i class="devicon-html5-plain"></i>
-          <i class="devicon-css3-plain"></i>  
-          <i class="devicon-selenium-original"></i>
-          <i class="devicon-junit-plain-wordmark"></i>
-          <i class="devicon-postman-plain"></i>
-          <i class="devicon-docker-plain"></i>
-          <i class="devicon-maven-plain-wordmark"></i>
-          <i class="devicon-git-plain"></i>
-      </div>
-      </section>
-    </main>
-  </body>
-</html>
+<Layout>
+  <Hero />
+  <AboutMe />
+  <Experience />
+  <Education />
+  <Projects />
+  <Curriculum />
+</Layout>

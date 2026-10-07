@@ -1,0 +1,48 @@
+---
+import "../styles/global.css";
+
+const {
+  title = "Álvaro Cantero Cárdenas — Backend Developer",
+  description = "Álvaro Cantero Cárdenas, junior backend developer focused on Java and Spring Boot.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+    <title>{title}</title>
+  </head>
+
+  <body>
+    <header class="header py-3 px-3">
+      <nav
+        class="d-flex flex-wrap justify-content-center gap-3 gap-md-4"
+        aria-label="Navegación principal"
+      >
+        <a href="/" class="nav-link p-0 active">Inicio</a>
+        <a href="/#about" class="nav-link p-0">Sobre mí</a>
+        <a href="/#experience" class="nav-link p-0">Experiencia</a>
+        <a href="/#education" class="nav-link p-0">Formación</a>
+        <a href="/#projects" class="nav-link p-0">Proyectos</a>
+        <a href="/#cv" class="nav-link p-0">CV</a>
+      </nav>
+    </header>
+
+
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
