@@ -1,76 +1,98 @@
 ---
+import TimelineCard from "../ui/TimeLineCard.astro";
 import { academicEducation, onlineCourses } from "../../data/education";
 ---
 
 <section id="education" class="container portfolio-container placeholder-section">
   <h2>Formación</h2>
 
-  <!-- Pestañas -->
   <ul class="nav nav-pills education-tabs" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#education-academic"
-        type="button" role="tab" aria-controls="education-academic" aria-selected="true">
-        Formación académica
-      </button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" data-bs-toggle="pill" data-bs-target="#education-courses"
-        type="button" role="tab" aria-controls="education-courses" aria-selected="false">
-        Cursos online
-      </button>
-    </li>
-  </ul>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#education-academic"
+      type="button" role="tab" aria-controls="education-academic" aria-selected="true">
+      Formación académica
+    </button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#education-courses"
+      type="button" role="tab" aria-controls="education-courses" aria-selected="false">
+      Cursos online
+    </button>
+  </li>
+</ul>
 
   <div class="tab-content">
-    <!-- Formación académica -->
     <div class="tab-pane fade show active" id="education-academic" role="tabpanel">
-      <div class="education-list d-flex flex-column gap-3">
+      <div class="d-flex flex-column gap-3">
         {academicEducation.map((item) => (
-          <article class="education-card d-flex flex-column flex-md-row">
-            <div class="education-period">
-              <span>{item.start}</span>
-              <span class="education-dash">–</span>
-              <span>{item.end}</span>
-            </div>
-            <div class="education-info">
-              <h3>{item.title}</h3>
-              <p class="education-center">{item.center}</p>
-              {item.place && (
-                <p class="education-place">
-                  <i class="fa-solid fa-location-dot"></i> {item.place}
-                </p>
-              )}
-            </div>
-          </article>
+          <TimelineCard title={item.title} subtitle={item.center} start={item.start} end={item.end}>
+            {item.place && <span><i class="fa-solid fa-location-dot"></i> {item.place}</span>}
+          </TimelineCard>
         ))}
       </div>
     </div>
 
-    <!-- Cursos online -->
     <div class="tab-pane fade" id="education-courses" role="tabpanel">
-      <div class="education-list d-flex flex-column gap-3">
+      <div class="d-flex flex-column gap-3">
         {onlineCourses.map((item) => (
-          <article class="education-card d-flex flex-column flex-md-row">
-            <div class="education-period">
-              <span>{item.end}</span>
-            </div>
-            <div class="education-info">
-              <h3>{item.title}</h3>
-              <p class="education-center">{item.center}</p>
-              <p class="education-place">
-                {item.hours && (
-                  <span><i class="fa-regular fa-clock"></i> {item.hours} h</span>
-                )}
-                {item.url && (
-                  <a href={item.url} target="_blank" rel="noopener noreferrer">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Certificado
-                  </a>
-                )}
-              </p>
-            </div>
-          </article>
+          <TimelineCard title={item.title} subtitle={item.center} end={item.end}>
+
+          </TimelineCard>
         ))}
       </div>
     </div>
   </div>
+  <hr>
+   <p class="description mx-auto">
+    Si quieres ver más información sobre mi formación, puedes visitar mi <a href="https://www.linkedin.com/in/alvarocanterocardenas" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+  </p>
 </section>
+
+<style>
+  /* Pestañas */
+  .education-tabs {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .education-tabs .nav-link {
+    padding: 6px 16px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background: #fff;
+    color: #111;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .education-tabs .nav-link:hover {
+    background: #e8e8e8;
+  }
+
+  .education-tabs .nav-link:focus-visible {
+    box-shadow: none;
+    outline: 1px solid var(--heading);
+    outline-offset: 2px;
+  }
+
+  .tab-content {
+    display: grid;
+  }
+
+  .tab-content > .tab-pane {
+    grid-area: 1 / 1;
+    display: block;
+    visibility: hidden;
+  }
+
+  .tab-content > .tab-pane.active {
+    visibility: visible;
+  }
+  .description {
+  max-width: 680px;
+  margin: 0 0 20px;
+  color: #c4c4c4;
+  font-size: 17px;
+  line-height: 1.7;
+}
+</style>

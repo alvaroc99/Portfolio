@@ -1,0 +1,25 @@
+---
+const { class: className = "", hoverable = false } = Astro.props;
+---
+
+<div class:list={["ui-card", { hoverable }, className]}>
+  <slot />
+</div>
+
+<style>
+  .ui-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background-color: var(--card);
+  }
+
+  .hoverable {
+    transition: border-color 0.2s ease;
+  }
+
+  .hoverable:hover {
+    border-color: #f7f7f7;
+  }
+</style>

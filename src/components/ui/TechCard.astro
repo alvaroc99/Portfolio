@@ -1,0 +1,36 @@
+---
+import Card from "./Card.astro";
+const { title } = Astro.props;
+---
+
+<Card class="tech-card">
+  <h3>{title}</h3>
+  <div class="icons"><slot /></div>
+</Card>
+
+<style>
+  .tech-card {
+    padding: 20px;
+  }
+
+  h3 {
+    margin: 0 0 18px;
+    color: var(--heading);
+    font-size: 16px;
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .icons :global(i) {
+    display: inline-flex;
+    width: 1.2em;
+    justify-content: center;
+    color: #f4f4f4;
+    font-size: clamp(1rem, 3vw, 2rem);
+    line-height: 1;
+  }
+</style>

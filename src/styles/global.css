@@ -1,40 +1,33 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
 :root {
-  font-family: "Courier New", Courier, monospace;
-  color: #d8d8d8;
-  background: #0b0b0d;
+  --border: #303034;
+  --card: #4d474734;
+  --heading: #eeeeee;
+  --muted: #888;
+  --accent: #8f2ed4;
+
+  font-size: 25px;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  font-size: 25px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
   min-width: 320px;
   font-family: "Courier New", Courier, monospace;
   background: #0b0b0d;
   color: #d8d8d8;
 }
 
-/* -------------------------
-   Header
-------------------------- */
+
+/* ------------------------- Header ------------------------- */
 
 .header {
   position: fixed;
   top: 0;
   z-index: 30;
-  background: #0b0b0d;
   width: 100%;
+  background: #0b0b0d;
 }
 
 .header a {
@@ -49,20 +42,40 @@ body {
   color: #d8d8d8;
 }
 
-/* -------------------------
-   Layout
-------------------------- */
+/* ------------------------- Layout y secciones ------------------------- */
 
 .portfolio-container {
   width: min(740px, 100%);
   max-width: 740px;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-inline: 20px;
 }
 
-/* -------------------------
-   Hero
-------------------------- */
+.placeholder-section {
+  padding-block: 100px;
+  border-top: 1px solid #202024;
+}
+
+.placeholder-section > h2 {
+  margin: 0 0 20px;
+  color: var(--heading);
+  font-size: 24px;
+}
+
+.placeholder-section > h3 {
+  margin: 0 0 16px;
+  color: var(--heading);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.placeholder-section > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ------------------------- Hero ------------------------- */
 
 .hero {
   min-height: calc(100vh - 50px);
@@ -71,7 +84,7 @@ body {
 
 .hero h1 {
   margin: 0;
-  color: #eeeeee;
+  color: var(--heading);
   font-size: clamp(38px, 6vw, 48px);
   font-weight: 700;
   line-height: 1.1;
@@ -80,7 +93,7 @@ body {
 
 .role {
   margin: 8px 0 24px;
-  color: #888;
+  color: var(--muted);
   font-size: 20px;
 }
 
@@ -99,10 +112,6 @@ body {
   line-height: 1.7;
 }
 
-/* -------------------------
-   Contact
-------------------------- */
-
 .contact a {
   color: #999;
   font-size: 15px;
@@ -111,42 +120,11 @@ body {
 }
 
 .contact a:hover {
-  color: #8f2ed4;
+  color: var(--accent);
   text-decoration: underline;
 }
 
-/* -------------------------
-   Sections
-------------------------- */
-
-.placeholder-section {
-  padding-block: 100px;
-  border-top: 1px solid #202024;
-}
-
-.placeholder-section h2 {
-  margin: 0 0 20px;
-  color: #eeeeee;
-  font-size: 24px;
-}
-
-.placeholder-section h3 {
-  margin: 0 0 16px;
-  color: #eeeeee;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.placeholder-section p {
-  margin: 0;
-  color: #888;
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-/* -------------------------
-   CV
-------------------------- */
+/* ------------------------- CV ------------------------- */
 
 .cv-download {
   display: flex;
@@ -158,6 +136,9 @@ body {
 
 .cv-download h3 {
   margin: 0;
+  color: var(--heading);
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .cv-download-link {
@@ -178,9 +159,7 @@ body {
   background: #e8e8e8;
 }
 
-/* -------------------------
-   Technologies
-------------------------- */
+/* ------------------------- Tecnologías ------------------------- */
 
 .technology-groups {
   display: grid;
@@ -188,150 +167,13 @@ body {
   gap: 16px;
 }
 
-.technology-card {
-  padding: 20px;
-  border: 1px solid #303034;
-  border-radius: 15px;
-  background-color: #4d474734;
-}
-
-.technology-card h3 {
-  margin: 0 0 18px;
-  color: #eeeeee;
-  font-size: 16px;
-  font-weight: 700;
-}
-
-.technology-icons {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  gap: clamp(8px, 2vw, 8px);
-}
-
-.technology-icons i {
-  display: inline-flex;
-  width: 1.2em;
-  justify-content: center;
-  font-size: clamp(1rem, 3vw, 2rem);
-  line-height: 1;
-  color: #f4f4f4;
-}
-
-/* -------------------------
-   Formación
-------------------------- */
-
-.education-card {
-  border: 1px solid #303034;
-  border-radius: 15px;
-  background-color: #4d474734;
-  overflow: hidden;
-  transition: border-color 0.2s ease;
-}
-
-.education-card:hover {
-  border-color: #f7f7f7;
-}
-
-.education-period {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 20px;
-  background-color: #1a1a1e;
-  color: #f8f8f8;
-  font-size: 15px;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.education-dash {
-  color: #555;
-}
-
-.education-info {
-  flex: 1;
-  padding: 20px;
-}
-
-.placeholder-section .education-info h3 {
-  margin: 0 0 8px;
-  font-size: 16px;
-  line-height: 1.4;
-}
-
-.education-info .education-center {
-  color: #c4c4c4;
-}
-
-.education-info .education-place {
-  margin-top: 4px;
-  color: #777;
-  font-size: 13px;
-}
-
-/* Evita que títulos o enlaces largos ensanchen las tarjetas */
-#education .education-card,
-#education .education-info {
-  min-width: 0;
-}
-
-#education .education-info {
-  overflow-wrap: anywhere;
-}
-
-/* Pestañas */
-
-.nav.education-tabs {
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.nav.education-tabs .nav-link {
-  padding: 3px 10px;
-  border: 1px solid #303034;
-  border-radius: 999px;
-  background: transparent;
-  color: #777;
-  font-size: 11px;
-  line-height: 1.4;
-  transition: color 0.2s ease, border-color 0.2s ease;
-}
-
-.nav.education-tabs .nav-link:hover {
-  color: #d8d8d8;
-}
-
-.nav.education-tabs .nav-link.active {
-  background: transparent;
-  border-color: #eeeeee;
-  color: #eeeeee;
-}
-
-.nav.education-tabs .nav-link:focus-visible {
-  box-shadow: none;
-  outline: 1px solid #eeeeee;
-  outline-offset: 2px;
-}
-
 /* -------------------------
    Responsive
 ------------------------- */
 
-@media (min-width: 768px) {
-  .education-period {
-    flex-direction: column;
-    min-width: 110px;
-    gap: 0;
-  }
-}
-
 @media (max-width: 600px) {
   .portfolio-container {
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-inline: 15px;
   }
 
   .technology-groups {

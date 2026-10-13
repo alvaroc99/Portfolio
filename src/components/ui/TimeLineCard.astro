@@ -1,0 +1,94 @@
+---
+import Card from "./Card.astro";
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  start?: number;
+  end: number;
+}
+
+const { title, subtitle, start, end } = Astro.props;
+---
+
+<Card hoverable class="d-flex flex-column flex-md-row">
+  <div class="period">
+    {start && (<><span>{start}</span><span class="dash">–</span></>)}
+    <span>{end}</span>
+  </div>
+
+  <div class="info">
+    <h3>{title}</h3>
+    {subtitle && <p class="subtitle">{subtitle}</p>}
+    {Astro.slots.has("default") && (
+      <p class="meta"><slot /></p>
+    )}
+  </div>
+</Card>
+
+<style>
+  .period {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 20px;
+    background-color: #1a1a1e;
+    color: #f8f8f8;
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .dash {
+    color: #555;
+  }
+
+  .info {
+    flex: 1;
+    min-width: 0;
+    padding: 20px;
+    overflow-wrap: anywhere;
+  }
+
+  h3 {
+    margin: 0 0 8px;
+    color: var(--heading);
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .subtitle {
+    margin: 0;
+    color: #c4c4c4;
+    font-size: 14px;
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+    margin: 4px 0 0;
+    color: #777;
+    font-size: 13px;
+  }
+
+  /* el contenido del slot pertenece a quien usa el componente, por eso :global */
+  .meta :global(a) {
+    color: #999;
+    text-decoration: none;
+  }
+
+  .meta :global(a:hover) {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  @media (min-width: 768px) {
+    .period {
+      flex-direction: column;
+      min-width: 110px;
+      gap: 0;
+    }
+  }
+</style>
