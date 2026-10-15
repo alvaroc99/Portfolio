@@ -1,0 +1,28 @@
+---
+import TechCard from "../ui/TechCard.astro";
+import { technologyGroups } from "../../data/technologies";
+---
+
+<div class="technology-groups" aria-label="Tecnologías utilizadas">
+  {technologyGroups.map((group) => (
+    <TechCard title={group.title}>
+      {group.items.map((tech) => (
+        <i class={tech.icon} title={tech.name} role="img" aria-label={tech.name}></i>
+      ))}
+    </TechCard>
+  ))}
+</div>
+
+<style>
+  .technology-groups {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  @media (max-width: 600px) {
+    .technology-groups {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

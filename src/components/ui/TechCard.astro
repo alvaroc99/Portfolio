@@ -3,34 +3,53 @@ import Card from "./Card.astro";
 const { title } = Astro.props;
 ---
 
-<Card class="tech-card">
-  <h3>{title}</h3>
-  <div class="icons"><slot /></div>
+<Card>
+  <div class="tech-body" role="group" aria-label={title}>
+    <h3 class="tech-title">{title}</h3>
+    <div class="icons"><slot /></div>
+  </div>
 </Card>
 
 <style>
-  .tech-card {
-    padding: 20px;
+  .tech-body {
+    padding: 16px 18px;
   }
 
-  h3 {
-    margin: 0 0 18px;
-    color: var(--heading);
-    font-size: 16px;
+  /* El !important gana a la regla global porque este selector es más específico */
+  .tech-title {
+    margin: 0 0 12px;
+    color: #8b95a7;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase;
   }
 
   .icons {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     gap: 8px;
   }
 
+  /* cada icono dentro de su cajita */
   .icons :global(i) {
     display: inline-flex;
-    width: 1.2em;
+    align-items: center;
     justify-content: center;
+    min-width: 44px;
+    height: 44px;
+    padding: 0 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background-color: #1a1a1e;
     color: #f4f4f4;
-    font-size: clamp(1rem, 3vw, 2rem);
+    font-size: 22px;
     line-height: 1;
+    transition: border-color 0.2s ease;
+  }
+
+  .icons :global(i:hover) {
+    border-color: #f7f7f7;
   }
 </style>
