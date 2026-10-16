@@ -1,5 +1,5 @@
 export interface Technology {
-  icon: string;   // clases de Font Awesome o Devicon
+  icon: string;
   name: string;
 }
 

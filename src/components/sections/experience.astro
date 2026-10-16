@@ -1,4 +1,72 @@
+---
+import TimelineCard from "../ui/TimeLineCard.astro";
+import TechnologyGroups from "./technologyGroups.astro";
+import { sortedExperience } from "../../data/experience";
+---
+
 <section id="experience" class="container portfolio-container placeholder-section">
-  <h2>Experiencia</h2>
-  <p>Experiencia</p>
+  <div class="experience-header">
+    <h2>Experiencia</h2>
+  </div>
+  <p>Aquí puedes encontrar mi experiencia laboral, junto a las tecnologías con las que he trabajado.</p>
+  <div class="d-flex justify-content-center my-3">
+  <a href="/cv.pdf" download="CV_Alvaro_Cantero_Cardenas.pdf" class="cv-download-link">
+    <i class="fa-solid fa-download"></i> Descargar CV
+  </a>
+</div>
+  <div class="d-flex flex-column gap-3">
+    {sortedExperience.map((item) => (
+      <TimelineCard title={item.role} subtitle={item.company} end={item.year}>
+        <span><i class="fa-regular fa-calendar"></i> {item.period}</span>
+        <span><i class="fa-solid fa-location-dot"></i> {item.place}</span>
+      </TimelineCard>
+    ))}
+  </div>
+
+  <h3 class="block-title">Tecnologías</h3>
+  <TechnologyGroups/>
 </section>
+
+<style>
+  .experience-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    font-size: 1.2rem;
+  }
+  
+  .cv-download {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .experience-header h2 {
+    margin: 0;
+    color: var(--heading);
+  }
+
+  .cv-download-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border: 1px solid #d1d1d1;
+    border-radius: 6px;
+    background: #fff;
+    color: #111;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+
+  .cv-download-link:hover {
+    background: #e8e8e8;
+  }
+
+  .block-title {
+    margin: 32px 0 16px;
+  }
+</style>
