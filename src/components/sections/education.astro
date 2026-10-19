@@ -4,9 +4,11 @@ import { academicEducation, onlineCourses } from "../../data/education";
 ---
 
 <section id="education" class="container portfolio-container placeholder-section">
-  <h2>Formación</h2>
+  <div class="education-header">
+    <h2 class="text-center">Formación</h2>
+  </div>
 
-  <ul class="nav nav-pills education-tabs" role="tablist">
+  <ul class="nav nav-pills education-tabs justify-content-center" role="tablist">
   <li class="nav-item" role="presentation">
     <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#education-academic"
       type="button" role="tab" aria-controls="education-academic" aria-selected="true">
@@ -27,6 +29,7 @@ import { academicEducation, onlineCourses } from "../../data/education";
         {academicEducation.map((item) => (
           <TimelineCard title={item.title} subtitle={item.center} start={item.start} end={item.end}>
             {item.place && <span><i class="fa-solid fa-location-dot"></i> {item.place}</span>}
+            
           </TimelineCard>
         ))}
       </div>
@@ -36,7 +39,9 @@ import { academicEducation, onlineCourses } from "../../data/education";
       <div class="d-flex flex-column gap-3">
         {onlineCourses.map((item) => (
           <TimelineCard title={item.title} subtitle={item.center} end={item.end}>
-
+            <a href={item.certificate} target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-certificate"></i> Ver certificado
+            </a>
           </TimelineCard>
         ))}
       </div>
@@ -44,14 +49,24 @@ import { academicEducation, onlineCourses } from "../../data/education";
   </div>
   <hr>
    <p class="description mx-auto">
-    Si quieres ver más información sobre mi formación, puedes visitar mi <a href="https://www.linkedin.com/in/alvarocanterocardenas" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+    Si quieres ver más información sobre mi formación, puedes visitar mi 
+      <a href="https://www.linkedin.com/in/alvarocanterocardenas" target="_blank" rel="noopener noreferrer"> LinkedIn</a>.
   </p>
 </section>
 
 <style>
+  .education-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    font-size: 1.2rem;
+  }
+
   /* Pestañas */
   .education-tabs {
-    gap: 10px;
+    gap: 12px;
     margin-bottom: 20px;
   }
 
@@ -91,8 +106,14 @@ import { academicEducation, onlineCourses } from "../../data/education";
   .description {
   max-width: 680px;
   margin: 0 0 20px;
-  color: #c4c4c4;
-  font-size: 17px;
-  line-height: 1.7;
-}
+  }
+
+  .description a {
+    color: #f4f4f4;
+    text-decoration: none;
+  }
+
+  .description a:hover {
+    color: #f4f2f5;
+  }
 </style>

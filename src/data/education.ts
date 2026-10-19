@@ -3,6 +3,7 @@ export interface Education {
   title: string;
   center: string;       
   place?: string; // solo si es presencial
+  certificate?: string;
   start: number;
   end: number;
 }
@@ -44,6 +45,7 @@ const education: Education[] = [
         type: "course",
         title: "n8n + MCP: Automatización y agente de IA inteligentes",
         center: "Udemy",
+        certificate: "https://www.udemy.com/certificate/UC-89ebb2b7-8efb-4550-b91c-8a2913b9a6b6/",
         start: 2026,
         end: 2026,
     },
@@ -51,6 +53,7 @@ const education: Education[] = [
         type: "course",
         title: "Google AI Essentials",
         center: "Google",
+        certificate: "https://www.coursera.org/account/accomplishments/specialization/certificate/1DSH7TFPIXIT",
         start: 2026,
         end: 2026,
     },
@@ -58,6 +61,7 @@ const education: Education[] = [
         type: "course",
         title: "Curso de introducción al testing",
         center: "OpenWebinars",
+        certificate: "https://openwebinars.net/cert/g4IK",
         start: 2025,
         end: 2025,
     },
