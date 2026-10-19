@@ -1,4 +1,65 @@
+---
+import TimelineCard from "../ui/TimeLineCard.astro";
+import { projects } from "../../data/projects";
+---
+
 <section id="projects" class="container portfolio-container placeholder-section">
   <h2>Proyectos</h2>
-  <p></p>
+
+  <div class="d-flex flex-column gap-3">
+    {projects.map((p) => (
+      <TimelineCard
+        title={p.title}
+        subtitle={p.description}
+        end={p.year}
+        icon={p.year ? undefined : "fa-solid fa-folder-open"}
+      >
+        <span class="tech">
+          {p.tech.map((t) => (
+            <i class={t.icon} title={t.name} role="img" aria-label={t.name}></i>
+          ))}
+        </span>
+
+        {(p.repo || p.demo) && (
+          <span class="links">
+            {p.repo && (
+              <a href={p.repo} target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i> Código
+              </a>
+            )}
+            {p.demo && (
+              <a href={p.demo} target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Publicación
+              </a>
+            )}
+          </span>
+        )}
+      </TimelineCard>
+    ))}
+  </div>
 </section>
+
+<style>
+  .tech {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .tech i {
+    color: #f4f4f4;
+    font-size: 30px;
+  }
+
+  .links {
+    display: flex;
+    gap: 16px;
+    margin-left: auto;
+    font-size: 15px;
+  }
+
+  #projects .links a:hover {
+    color: #f7f7f7;
+    text-decoration: none;
+  }
+</style>

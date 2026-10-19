@@ -8,21 +8,21 @@ export interface Experience {
 
 const experience: Experience[] = [
   {
-    role: "Desarrollador Web (practicas)",
+    role: "Desarrollador Web",
     company: "Youpal Group",
     place: "Remoto",
     year: 2025,
     period: "Mar – Jun",
   },
   {
-    role: "Administrador de Sistemas (practicas)",
+    role: "Administrador de Sistemas",
     company: "Raini Computer S.A.",
     place: "Cádiz",
     year: 2022,
     period: "Mar – Jun",
   },
   {
-    role: "Técnico de Instalaciones de Telecomunicaciones (practicas)",
+    role: "Técnico de Instalaciones de Telecomunicaciones",
     company: "Circet",
     place: "Cádiz",
     year: 2019,

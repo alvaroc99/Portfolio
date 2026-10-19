@@ -1,0 +1,117 @@
+---
+import Card from "./Card.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  status?: string;
+  tech: { icon: string; name: string }[];
+  repo?: string;
+  demo?: string;
+}
+
+const { title, description, status, tech, repo, demo } = Astro.props;
+---
+
+<Card hoverable>
+  <div class="project-body">
+    <div class="project-head">
+      <h3>{title}</h3>
+      {status && <span class="status">{status}</span>}
+    </div>
+
+    <p class="desc">{description}</p>
+
+    <div class="project-tech">
+      {tech.map((t) => (
+        <i class={t.icon} title={t.name} role="img" aria-label={t.name}></i>
+      ))}
+    </div>
+
+    {(repo || demo) && (
+      <div class="project-links">
+        {repo && (
+          <a href={repo} target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i> Código
+          </a>
+        )}
+        {demo && (
+          <a href={demo} target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
+          </a>
+        )}
+      </div>
+    )}
+  </div>
+</Card>
+
+<style>
+  .project-body {
+    padding: 20px;
+  }
+
+  .project-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  h3 {
+    margin: 0;
+    color: var(--heading);
+  }
+
+  .status {
+    padding: 1px 10px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: #777;
+  }
+
+  .desc {
+    margin: 0 0 15px;
+    color: #c4c4c4;
+  }
+
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .project-tech i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 8px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background-color: #1a1a1e;
+    color: #f4f4f4;
+    font-size: 25px;
+    line-height: 1;
+  }
+
+  .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .project-links a {
+    color: #999;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .project-links a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+</style>
