@@ -4,7 +4,9 @@ import { projects } from "../../data/projects";
 ---
 
 <section id="projects" class="container portfolio-container placeholder-section">
-  <h2>Proyectos</h2>
+  <div class="projects-header">
+    <h2>Proyectos</h2>
+  </div>
 
   <div class="d-flex flex-column gap-3">
     {projects.map((p) => (
@@ -40,6 +42,14 @@ import { projects } from "../../data/projects";
 </section>
 
 <style>
+  .projects-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    font-size: 1.2rem;
+  }
   .tech {
     display: flex;
     align-items: center;

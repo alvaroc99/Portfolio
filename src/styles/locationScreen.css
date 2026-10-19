@@ -14,16 +14,25 @@
     position: absolute;
     width: 100vw;
     height: 100dvh;
-    overflow-y: auto;          
+    overflow-y: auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 50px;         
+    padding-top: var(--header-h);
+    scrollbar-width: thin;
+    scrollbar-color: #303034 transparent;
   }
 
-  .slide :global(.placeholder-section) {
+  .slide > * {
+    margin-block: auto;
+  }
+
+  .slide .placeholder-section {
+    padding-block: clamp(8px, 3vh, 32px);   /* antes 100px */
     border-top: none;
-    padding-block: 40px;
+  }
+
+  .slide .hero {
+    min-height: 0;
+    padding-bottom: 0;
   }
 
 .arrow {
