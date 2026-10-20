@@ -1,29 +1,33 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/sections/hero.astro";
-//import AboutMe from "../components/sections/aboutMe.astro";
 import Experience from "../components/sections/experience.astro";
 import Education from "../components/sections/education.astro";
 import Projects from "../components/sections/projects.astro";
-import Curriculum from "../components/sections/curriculum.astro";
 import "../styles/locationScreen.css";
 ---
 
 <Layout>
   <div class="viewport" id="viewport">
     <div class="world" id="world">
-      <div class="slide" data-x="0"  data-y="0"><Hero /></div>
-      <div class="slide" data-x="1"  data-y="0"><Experience /></div>
-      <div class="slide" data-x="-1"  data-y="0"><Education /></div>
-      <div class="slide" data-x="0"  data-y="-1"><Projects /></div>
+      <div class="slide" data-x="0" data-title="Inicio" data-y="0"><Hero /></div>
+      <div class="slide" data-x="1" data-title="Experiencia" data-y="0"><Experience /></div>
+      <div class="slide" data-x="-1" data-title="Formación" data-y="0"><Education /></div>
+      <div class="slide" data-x="0" data-title="Proyectos" data-y="-1"><Projects /></div>
     </div>
 
-    <button class="arrow arrow-left"  data-dir="left"  aria-label="Ir a la izquierda"><i class="fa-solid fa-chevron-left"></i></button>
-    <button class="arrow arrow-right" data-dir="right" aria-label="Ir a la derecha"><i class="fa-solid fa-chevron-right"></i></button>
-    <button class="arrow arrow-up"    data-dir="up"    aria-label="Ir arriba"><i class="fa-solid fa-chevron-up"></i></button>
+    <button class="arrow arrow-left" data-dir="left" aria-label="Ir a la izquierda">
+      <i class="fa-solid fa-arrow-left"></i><span class="label"></span>
+    </button>
+    <button class="arrow arrow-right" data-dir="right" aria-label="Ir a la derecha">
+      <span class="label"></span><i class="fa-solid fa-arrow-right"></i>
+    </button>
+    <button class="arrow arrow-up" data-dir="up" aria-label="Ir arriba">
+      <i class="fa-solid fa-arrow-up"></i><span class="label"></span>
+    </button>
   </div>
 </Layout>
 
-<script type="module" src="/src/scripts/locationScreen.js"></script>
+<script type="module" src="/src/scripts/locationScreen.ts"></script>
 
 

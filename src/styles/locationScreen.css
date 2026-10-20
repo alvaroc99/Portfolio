@@ -26,7 +26,7 @@
   }
 
   .slide .placeholder-section {
-    padding-block: clamp(8px, 3vh, 32px);   /* antes 100px */
+    padding-block: clamp(8px, 3vh, 32px);
     border-top: none;
   }
 
@@ -38,19 +38,29 @@
 .arrow {
   position: fixed;
   z-index: 20;
-  width: 44px;
-  height: 44px;
+  width: auto;
+  height: auto;
   border: none;
   background: transparent;
   color: #fbfafa;
   font-size: 22px;
   cursor: pointer;
   transition: color 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+  gap: 10px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.arrow-up {
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
 }
 .arrow:hover { color: #8f2ed4; }
 .arrow[hidden] { display: none; }
 
-.arrow-left  { left: 12px;  top: 50%; transform: translateY(-50%); }
+.arrow-left  { left: 12px; top: 50%; transform: translateY(-50%); }
 .arrow-right { right: 12px; top: 50%; transform: translateY(-50%); }
 .arrow-up    { top: 60px;   left: 50%; transform: translateX(-50%); }
 .arrow-down  { bottom: 12px; left: 50%; transform: translateX(-50%); }
