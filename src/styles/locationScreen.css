@@ -19,6 +19,30 @@
     padding-top: var(--header-h);
     scrollbar-width: thin;
     scrollbar-color: #303034 transparent;
+    left: calc(var(--x) * 100%);
+    top: calc(var(--y) * 100%);
+  }
+
+  
+  /* Posiciones iniciales de las vistas */
+  .slide[data-x="0"][data-y="0"] {
+    left: 0;
+    top: 0;
+  }
+
+  .slide[data-x="1"][data-y="0"] {
+    left: 100%;
+    top: 0;
+  }
+
+  .slide[data-x="-1"][data-y="0"] {
+    left: -100%;
+    top: 0;
+  }
+
+  .slide[data-x="0"][data-y="-1"] {
+    left: 0;
+    top: -100%;
   }
 
   .slide > * {
