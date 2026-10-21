@@ -81,6 +81,16 @@
   align-items: center;
   gap: 4px;
 }
+
+.arrow-down {
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
 .arrow:hover { color: #8f2ed4; }
 .arrow[hidden] { display: none; }
 
